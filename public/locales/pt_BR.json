@@ -1,0 +1,14 @@
+{
+  "landing_page": {
+    "title": "texto_ptbr",
+    "language_dialog": {
+      "title": "Escolha seu idioma",
+      "lang_options": {
+        "en": "Inglês",
+        "pt_br": "Português Brasileiro",
+        "fr": "Francês"
+      },
+      "button": "Confirmar"
+    }
+  }
+}
