@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import {
-  Backdrop,
   Box,
   Button,
   Dialog,
@@ -26,6 +25,7 @@ export const LandingPage: FunctionComponent = () => {
   const [openLanguageDialog, setOpenLanguageDialog] = useState(false);
 
   const handleCloseLanguageDialog = () => {
+    setLanguage(selectedLanguage);
     setOpenLanguageDialog(false);
     setShowLanguageModal(false);
   };
@@ -34,7 +34,6 @@ export const LandingPage: FunctionComponent = () => {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setSelectedLanguage(event.target.value);
-    setLanguage(event.target.value);
   };
 
   useEffect(() => {
@@ -53,14 +52,6 @@ export const LandingPage: FunctionComponent = () => {
           {t("landing_page.language_dialog.title")}
         </Button>
       </Box>
-      <Backdrop
-        sx={{
-          color: Color.BackdropFill,
-          zIndex: (theme) => theme.zIndex.drawer + 1,
-        }}
-        open={openLanguageDialog}
-        onClick={handleCloseLanguageDialog}
-      >
         <Dialog
           open={openLanguageDialog}
           onClose={handleCloseLanguageDialog}
@@ -107,7 +98,6 @@ export const LandingPage: FunctionComponent = () => {
             </Button>
           </DialogActions>
         </Dialog>
-      </Backdrop>
     </Box>
   );
 };
